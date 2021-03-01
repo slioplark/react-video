@@ -8,6 +8,10 @@ export const PlayWrapper = styled.div`
   img {
     width: 100%;
   }
+  .video-js {
+    width: 100%;
+    padding-bottom: 50%;
+  }
 `;
 
 export const Title = styled.div`
