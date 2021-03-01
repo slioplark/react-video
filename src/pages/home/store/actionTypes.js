@@ -1,0 +1,1 @@
+export const GET_LIST = 'HOME/GET_LIST';
