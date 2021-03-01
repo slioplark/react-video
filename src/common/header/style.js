@@ -16,6 +16,6 @@ export const MenuWrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const MenuItem = styled.a`
+export const MenuItem = styled.div`
   margin: 0 4px;
 `;
