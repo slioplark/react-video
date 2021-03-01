@@ -12,8 +12,14 @@ export const HomeWrapper = styled.div`
 
 export const HomeItem = styled.div`
   flex: 0 0 24%;
-  margin: 20px auto;
+  margin: 16px auto;
   overflow: hidden;
+  @media only screen and (max-width: 768px) {
+    flex: 0 0 45%;
+  }
+  @media only screen and (max-width: 420px) {
+    flex: 0 0 95%;
+  }
   img {
     width: 100%;
     height: 100%;
@@ -27,6 +33,7 @@ export const Img = styled.div`
   background-image: url(${(props) => props.url});
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const Title = styled.div`
