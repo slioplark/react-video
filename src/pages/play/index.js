@@ -10,6 +10,9 @@ function Play(props) {
   useEffect(() => {
     const id = props.match.params.id;
     dispatch(actionCreators.getData(id));
+    return () => {
+      dispatch(actionCreators.clearData());
+    }
   }, [props, dispatch]);
 
   return (

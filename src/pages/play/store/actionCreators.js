@@ -17,3 +17,8 @@ export const getData = (id) => {
       .catch(err => console.log(err));
   }
 }
+
+export const clearData = () => ({
+  type: actionTypes.CLEAR_DATA,
+  payload: {}
+});
