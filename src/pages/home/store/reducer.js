@@ -7,7 +7,7 @@ const defaultState = {
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case actionTypes.GET_LIST:
-      return state;
+      return Object.assign(state, { list: action.payload });
     default:
       return state;
   }
