@@ -13,9 +13,9 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Header />
-        <Route path="/" exact component={Home} />
-        <Route path="/love" exact component={Love} />
-        <Route path="/play" exact component={Play} />
+        <Route path="/react-video" exact component={Home} />
+        <Route path="/react-video/love" exact component={Love} />
+        <Route path="/react-video/play" exact component={Play} />
       </BrowserRouter>
     </Provider>
   );
