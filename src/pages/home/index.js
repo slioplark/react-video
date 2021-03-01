@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actionCreators } from './store';
-import { HomeWrapper, HomeItem, Img, Title } from './style';
+import { HomeWrapper, HomeItem, Img, Title, Desc } from './style';
 
 function Home() {
   const list = useSelector(state => state.home.list)
@@ -21,6 +21,7 @@ function Home() {
               <Link to={'/react-video/play/' + item?.id}>
                 <Img url={item?.snippet?.thumbnails?.medium?.url} />
                 <Title>{item?.snippet?.channelTitle}</Title>
+                <Desc>{item?.snippet?.description}</Desc>
               </Link>
             </HomeItem>
           );

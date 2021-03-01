@@ -13,6 +13,7 @@ export const HomeWrapper = styled.div`
 export const HomeItem = styled.div`
   flex: 0 0 24%;
   margin: 20px auto;
+  overflow: hidden;
   img {
     width: 100%;
     height: 100%;
@@ -28,7 +29,16 @@ export const Img = styled.div`
 `;
 
 export const Title = styled.div`
-  margin: 4px auto;
+  margin: 16px auto;
   font-size: 14px;
   font-weight: bold;
+`;
+
+export const Desc = styled.div`
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 `;
