@@ -1,6 +1,10 @@
+import Header from './common/header';
+
 function App() {
   return (
-    <div>React</div>
+    <div>
+      <Header />
+    </div>
   );
 }
 
