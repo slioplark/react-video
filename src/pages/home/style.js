@@ -12,11 +12,19 @@ export const HomeWrapper = styled.div`
 
 export const HomeItem = styled.div`
   flex: 0 0 24%;
-  margin: 40px auto;
+  margin: 20px auto;
   img {
     width: 100%;
     height: 100%;
   }
+`;
+
+export const Img = styled.div`
+  width: 100%;
+  padding-bottom: 60%;
+  background-image: url(${(props) => props.url});
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 export const Title = styled.div`
