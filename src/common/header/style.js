@@ -14,8 +14,7 @@ export const HeaderWrapper = styled.div`
 export const MenuWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-
-export const MenuItem = styled.div`
-  margin: 0 4px;
+  width: 100%;
+  max-width: 1080px;
+  margin: auto;
 `;

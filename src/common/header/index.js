@@ -1,16 +1,12 @@
 import { Link } from 'react-router-dom';
-import { HeaderWrapper, MenuWrapper, MenuItem } from './style';
+import { HeaderWrapper, MenuWrapper } from './style';
 
 function Header() {
   return (
     <HeaderWrapper>
-      <Link to="/react-video">
-        Home
-      </Link>
       <MenuWrapper>
-        <Link to="/react-video/love">
-          <MenuItem>Love</MenuItem>
-        </Link>
+        <Link to="/react-video">Home</Link>
+        <Link to="/react-video/love">Love</Link>
       </MenuWrapper>
     </HeaderWrapper>
   );
