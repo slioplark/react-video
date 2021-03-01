@@ -1,9 +1,20 @@
-import { HeaderWrapper } from './style';
+import { Link } from 'react-router-dom';
+import { HeaderWrapper, MenuWrapper, MenuItem } from './style';
 
 function Header() {
   return (
     <HeaderWrapper>
-      <div>Home Page</div>
+      <Link to="/">
+        Home
+      </Link>
+      <MenuWrapper>
+        <Link to="/love">
+          <MenuItem>Love</MenuItem>
+        </Link>
+        <Link to="/play">
+          <MenuItem>Play</MenuItem>
+        </Link>
+      </MenuWrapper>
     </HeaderWrapper>
   );
 }
