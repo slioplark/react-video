@@ -15,7 +15,7 @@ function App() {
         <Header />
         <Route path="/react-video" exact component={Home} />
         <Route path="/react-video/love" exact component={Love} />
-        <Route path="/react-video/play" exact component={Play} />
+        <Route path="/react-video/play/:id" exact component={Play} />
       </BrowserRouter>
     </Provider>
   );

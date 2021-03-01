@@ -11,9 +11,6 @@ function Header() {
         <Link to="/react-video/love">
           <MenuItem>Love</MenuItem>
         </Link>
-        <Link to="/react-video/play">
-          <MenuItem>Play</MenuItem>
-        </Link>
       </MenuWrapper>
     </HeaderWrapper>
   );

@@ -1,0 +1,1 @@
+export const GET_DATA = 'PLAY/GET_DATA';
