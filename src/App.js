@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
 import store from './store';
 
@@ -16,6 +16,9 @@ function App() {
         <Route path="/react-video" exact component={Home} />
         <Route path="/react-video/love" exact component={Love} />
         <Route path="/react-video/play/:id" exact component={Play} />
+        <Route path="*">
+          <Redirect to="/react-video" />
+        </Route>
       </BrowserRouter>
     </Provider>
   );
