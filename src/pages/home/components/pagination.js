@@ -19,7 +19,10 @@ function Pagination({ pageSize = 0, totalNumber = 0 }) {
       list.push(i);
     }
     setList(list);
-  }, [pageSize, totalNumber]);
+    return () => {
+      dispatch(actionCreators.updatePage(0));
+    }
+  }, [pageSize, totalNumber, dispatch]);
 
   return (
     <PageWrapper>
