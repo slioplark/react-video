@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/react-video/static/js/main.76fa7d58.chunk.js",
-    "main.js.map": "/react-video/static/js/main.76fa7d58.chunk.js.map",
+    "main.js": "/react-video/static/js/main.df212e60.chunk.js",
+    "main.js.map": "/react-video/static/js/main.df212e60.chunk.js.map",
     "runtime-main.js": "/react-video/static/js/runtime-main.bc24cf63.js",
     "runtime-main.js.map": "/react-video/static/js/runtime-main.bc24cf63.js.map",
     "static/js/2.8f19ab9d.chunk.js": "/react-video/static/js/2.8f19ab9d.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.bc24cf63.js",
     "static/js/2.8f19ab9d.chunk.js",
-    "static/js/main.76fa7d58.chunk.js"
+    "static/js/main.df212e60.chunk.js"
   ]
 }
