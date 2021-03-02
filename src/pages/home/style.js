@@ -51,7 +51,7 @@ export const Desc = styled.div`
   -webkit-line-clamp: 3;
 `;
 
-export const Love = styled.div`
+export const LoveText = styled.div`
   position: absolute;
   top: 4px;
   right: 4px;

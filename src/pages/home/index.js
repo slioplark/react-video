@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actionCreators } from './store';
-import { HomeWrapper, HomeItem, Img, Title, Desc, Love, Time } from './style';
+import { HomeWrapper, HomeItem, Img, Title, Desc, LoveText, Time } from './style';
 import moment from 'moment';
 
 function Home() {
@@ -47,9 +47,9 @@ function Home() {
             <HomeItem key={item?.id}>
               <Link to={'/react-video/play/' + item?.id}>
                 <Img url={item?.snippet?.thumbnails?.medium?.url}>
-                  <Love onClick={(e) => loveVideo(e, item)}>
+                  <LoveText onClick={(e) => loveVideo(e, item)}>
                     {love[item?.id] ? '已收藏' : '收藏'}
-                  </Love>
+                  </LoveText>
                   <Time>{getTime(item?.contentDetails?.duration)}</Time>
                 </Img>
                 <Title>{item?.snippet?.channelTitle}</Title>
