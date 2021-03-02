@@ -13,8 +13,15 @@ const chageList = (data) => ({
 
 export const getList = (pageToken = '') => {
   return (dispatch) => {
-    axios.get(`${api}?part=${part}&chart=${chart}&maxResults=12&key=${key}&pageToken=${pageToken}`)
+    axios.get(`${api}?part=${part}&chart=${chart}&maxResults=100&key=${key}&pageToken=${pageToken}`)
       .then(res => dispatch(chageList(res.data)))
       .catch(err => console.log(err));
+  }
+}
+
+export const updatePage = (index) => {
+  return {
+    type: actionTypes.UPDATE_PAGE,
+    payload: index
   }
 }

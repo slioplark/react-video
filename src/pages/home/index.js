@@ -3,11 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actionCreators } from './store';
 import { HomeWrapper, HomeItem, Img, Title, Desc, LoveText, Time } from './style';
+import Pagination from './components/pagination';
 import moment from 'moment';
 
 function Home() {
   const [love, setLove] = useState({});
 
+  const page = useSelector(state => state.home.page);
   const list = useSelector(state => state.home.list)
   const dispatch = useDispatch();
 
@@ -42,23 +44,28 @@ function Home() {
   return (
     <HomeWrapper>
       {
-        list.map(item => {
-          return (
-            <HomeItem key={item?.id}>
-              <Link to={'/react-video/play/' + item?.id}>
-                <Img url={item?.snippet?.thumbnails?.medium?.url}>
-                  <LoveText onClick={(e) => loveVideo(e, item)}>
-                    {love[item?.id] ? '已收藏' : '收藏'}
-                  </LoveText>
-                  <Time>{getTime(item?.contentDetails?.duration)}</Time>
-                </Img>
-                <Title>{item?.snippet?.channelTitle}</Title>
-                <Desc>{item?.snippet?.description}</Desc>
-              </Link>
-            </HomeItem>
-          );
+        list.map((item, index) => {
+          if (index >= page * 12 && index < (page + 1) * 12) {
+            return (
+              <HomeItem key={item?.id}>
+                <Link to={'/react-video/play/' + item?.id}>
+                  <Img url={item?.snippet?.thumbnails?.medium?.url}>
+                    <LoveText onClick={(e) => loveVideo(e, item)}>
+                      {love[item?.id] ? '已收藏' : '收藏'}
+                    </LoveText>
+                    <Time>{getTime(item?.contentDetails?.duration)}</Time>
+                  </Img>
+                  <Title>{item?.snippet?.channelTitle}</Title>
+                  <Desc>{item?.snippet?.description}</Desc>
+                </Link>
+              </HomeItem>
+            );
+          } else {
+            return '';
+          }
         })
       }
+      <Pagination pageSize={12} totalNumber={list.length} />
     </HomeWrapper>
   );
 }

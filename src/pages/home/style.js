@@ -72,3 +72,32 @@ export const Time = styled.div`
   color: #fff;
   background-color: #212121;
 `;
+
+export const PageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 16px auto;
+`;
+
+export const PageItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666666;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin: 0 4px;
+  border: 1px solid #D9D9D9;
+  font-size: 12px;
+  border-radius: 50%;
+  &: hover {
+    border: 1px solid #FD113A;
+  }
+  &.active {
+    color: #fff;
+    border: 1px solid #FD113A;
+    background-color: #FD113A;
+  }
+`;
