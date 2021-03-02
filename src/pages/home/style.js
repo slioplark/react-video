@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HomeWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
   width: 100%;
   max-width: 1080px;
   margin: 16px auto;
@@ -11,14 +11,14 @@ export const HomeWrapper = styled.div`
 `;
 
 export const HomeItem = styled.div`
-  flex: 0 0 24%;
-  margin: 16px auto;
+  flex: 0 0 calc(25% - 8px);
+  margin: 16px 4px;
   overflow: hidden;
   @media only screen and (max-width: 768px) {
-    flex: 0 0 45%;
+    flex: 0 0 calc(50% - 8px);
   }
   @media only screen and (max-width: 420px) {
-    flex: 0 0 95%;
+    flex: 0 0 calc(100% - 8px);
   }
   img {
     width: 100%;
