@@ -9,6 +9,9 @@ export const HeaderWrapper = styled.div`
   padding: 0 16px;
   box-sizing: border-box;
   border-bottom: 1px solid #000;
+  .iconfont {
+    font-size: 24px;
+  }
 `;
 
 export const MenuWrapper = styled.div`

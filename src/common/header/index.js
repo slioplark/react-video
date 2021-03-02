@@ -5,8 +5,12 @@ function Header() {
   return (
     <HeaderWrapper>
       <MenuWrapper>
-        <Link to="/react-video">Home</Link>
-        <Link to="/react-video/love">Love</Link>
+        <Link to="/react-video">
+          <span className="iconfont">&#xe7a6;</span>
+        </Link>
+        <Link to="/react-video/love">
+          <span className="iconfont">&#xe64d;</span>
+        </Link>
       </MenuWrapper>
     </HeaderWrapper>
   );
