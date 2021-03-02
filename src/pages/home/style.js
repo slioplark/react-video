@@ -51,6 +51,17 @@ export const Desc = styled.div`
   -webkit-line-clamp: 3;
 `;
 
+export const Love = styled.div`
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 4px;
+  font-size: 12px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #212121;
+`;
+
 export const Time = styled.div`
   position: absolute;
   right: 4px;
