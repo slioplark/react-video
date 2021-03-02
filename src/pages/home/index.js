@@ -31,6 +31,7 @@ function Home() {
     else love[video.id] = video
 
     setLove(love);
+    dispatch(actionCreators.updateLove(Object.keys(love).length));
     localStorage.setItem('love', JSON.stringify(love));
   }
 
@@ -39,6 +40,7 @@ function Home() {
     const love = JSON.parse(val) || {};
     setLove(love);
     dispatch(actionCreators.getList());
+    dispatch(actionCreators.updateLove(Object.keys(love).length));
   }, [dispatch])
 
   return (

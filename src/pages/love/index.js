@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { actionCreators } from '../home/store';
 import { LoveWrapper, LoveItem, Img, LoveText, Time, Title, Desc } from './style';
 import moment from 'moment';
 
 function Love() {
   const [love, setLove] = useState({})
   const [list, setList] = useState([]);
+
+  const dispatch = useDispatch();
 
   const getTime = (time) => {
     const hours = moment.duration(time).hours();
@@ -25,6 +29,7 @@ function Love() {
     else love[video.id] = video
 
     setLove(love);
+    dispatch(actionCreators.updateLove(Object.keys(love).length));
     localStorage.setItem('love', JSON.stringify(love));
   }
 
@@ -34,7 +39,8 @@ function Love() {
     const list = Object.values(love);
     setLove(love);
     setList(list);
-  }, [])
+    dispatch(actionCreators.updateLove(Object.keys(love).length));
+  }, [dispatch])
 
   return (
     <LoveWrapper>

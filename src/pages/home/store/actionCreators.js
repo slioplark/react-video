@@ -19,9 +19,12 @@ export const getList = (pageToken = '') => {
   }
 }
 
-export const updatePage = (index) => {
-  return {
-    type: actionTypes.UPDATE_PAGE,
-    payload: index
-  }
-}
+export const updateLove = (value) => ({
+  type: actionTypes.UPDATE_LOVE,
+  payload: value
+});
+
+export const updatePage = (index) => ({
+  type: actionTypes.UPDATE_PAGE,
+  payload: index
+});
