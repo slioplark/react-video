@@ -39,9 +39,12 @@ function Home() {
     const val = localStorage.getItem('love');
     const love = JSON.parse(val) || {};
     setLove(love);
-    dispatch(actionCreators.getList());
     dispatch(actionCreators.updateLove(Object.keys(love).length));
-  }, [dispatch])
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(actionCreators.getVideosList());
+  }, [dispatch]);
 
   return (
     <HomeWrapper>

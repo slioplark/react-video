@@ -16,8 +16,15 @@ export const HeaderWrapper = styled.div`
 
 export const MenuWrapper = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 1080px;
   margin: auto;
+`;
+
+export const Search = styled.input`
+  width: 566px;
+  height: 26px;
+}
 `;

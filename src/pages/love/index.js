@@ -40,7 +40,7 @@ function Love() {
     setLove(love);
     setList(list);
     dispatch(actionCreators.updateLove(Object.keys(love).length));
-  }, [dispatch])
+  }, [dispatch]);
 
   return (
     <LoveWrapper>
