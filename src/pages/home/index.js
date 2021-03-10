@@ -9,6 +9,7 @@ import moment from 'moment';
 function Home() {
   const [love, setLove] = useState({});
 
+  const type = useSelector(state => state.home.type);
   const page = useSelector(state => state.home.page);
   const list = useSelector(state => state.home.list)
   const dispatch = useDispatch();
@@ -50,13 +51,14 @@ function Home() {
     <HomeWrapper>
       {
         list.map((item, index) => {
+          const id = type === 'videos' ? item?.id : item?.id?.videoId;
           if (index >= page * 12 && index < (page + 1) * 12) {
             return (
-              <HomeItem key={item?.id}>
-                <Link to={'/react-video/play/' + item?.id}>
+              <HomeItem key={index}>
+                <Link to={'/react-video/play/' + id}>
                   <Img url={item?.snippet?.thumbnails?.medium?.url}>
                     <LoveText onClick={(e) => loveVideo(e, item)}>
-                      {love[item?.id] ? '已收藏' : '收藏'}
+                      {love[id] ? '已收藏' : '收藏'}
                     </LoveText>
                     <Time>{getTime(item?.contentDetails?.duration)}</Time>
                   </Img>
@@ -71,7 +73,7 @@ function Home() {
         })
       }
       <Pagination pageSize={12} totalNumber={list.length} />
-    </HomeWrapper>
+    </HomeWrapper >
   );
 }
 

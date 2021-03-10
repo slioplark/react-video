@@ -3,6 +3,7 @@ import * as actionTypes from './actionTypes';
 const defaultState = {
   love: 0,
   page: 0,
+  type: null,
   list: []
 };
 
@@ -10,6 +11,8 @@ const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case actionTypes.GET_LIST:
       return Object.assign(state, { list: action.payload });
+    case actionTypes.UPDATE_TYPE:
+      return Object.assign(state, { type: action.payload });
     case actionTypes.UPDATE_LOVE:
       return Object.assign(state, { love: action.payload });
     case actionTypes.UPDATE_PAGE:
