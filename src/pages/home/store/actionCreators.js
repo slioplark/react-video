@@ -48,6 +48,7 @@ export const getVideosList = (pageToken = '') => {
     axios.get(`${api}?part=${part}&chart=${chart}&maxResults=${maxResults}&key=${key}&pageToken=${pageToken}`)
       .then(res => {
         dispatch(changeType('videos'));
+        dispatch(changePage(0));
         dispatch(changeList(res.data));
         dispatch(changeNextPageToken(res.data.nextPageToken));
       })
