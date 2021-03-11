@@ -11,6 +11,7 @@ function Header() {
     if (e.key === 'Enter') {
       const val = e.target.value;
       dispatch(actionCreators.getSearchList(val));
+      dispatch(actionCreators.updateSearchText(val));
     }
   }
 

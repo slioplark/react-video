@@ -19,7 +19,12 @@ const changeType = (type) => ({
 const changePage = (page) => ({
   type: actionTypes.UPDATE_PAGE,
   payload: page
-})
+});
+
+const changeNextPageToken = (token) => ({
+  type: actionTypes.UPDATE_NEXT_PAGE_TOKEN,
+  payload: token
+});
 
 export const getSearchList = (q, pageToken = '') => {
   const api = 'https://www.googleapis.com/youtube/v3/search';
@@ -30,6 +35,7 @@ export const getSearchList = (q, pageToken = '') => {
         dispatch(changeType('search'));
         dispatch(changePage(0));
         dispatch(changeList(res.data));
+        dispatch(changeNextPageToken(res.data.nextPageToken));
       })
       .catch(err => alert('由於多次得調用 youtube api，所以目前暫時無法回傳資料，請耐心等待一段時間後，再重新進入頁面。'));
   }
@@ -43,6 +49,7 @@ export const getVideosList = (pageToken = '') => {
       .then(res => {
         dispatch(changeType('videos'));
         dispatch(changeList(res.data));
+        dispatch(changeNextPageToken(res.data.nextPageToken));
       })
       .catch(err => alert('由於多次得調用 youtube api，所以目前暫時無法回傳資料，請耐心等待一段時間後，再重新進入頁面。'));
   }
@@ -56,4 +63,9 @@ export const updateLove = (value) => ({
 export const updatePage = (index) => ({
   type: actionTypes.UPDATE_PAGE,
   payload: index
+});
+
+export const updateSearchText = (text) => ({
+  type: actionTypes.UPDATE_SEARCH_TEXT,
+  searchText: text
 });

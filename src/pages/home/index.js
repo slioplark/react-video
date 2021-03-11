@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { actionCreators } from './store';
 import { HomeWrapper, HomeItem, Img, Title, Desc, LoveText, Time } from './style';
 import Pagination from './components/pagination';
@@ -11,7 +10,7 @@ function Home() {
 
   const type = useSelector(state => state.home.type);
   const page = useSelector(state => state.home.page);
-  const list = useSelector(state => state.home.list)
+  const list = useSelector(state => state.home.list);
   const dispatch = useDispatch();
 
   const getTime = (time) => {
@@ -51,8 +50,8 @@ function Home() {
     <HomeWrapper>
       {
         list.map((item, index) => {
-          const id = type === 'videos' ? item?.id : item?.id?.videoId;
           if (index >= page * 24 && index < (page + 1) * 24) {
+            const id = type === 'videos' ? item?.id : item?.id?.videoId;
             return (
               <HomeItem key={index}>
                 <a href={'https://www.youtube.com/watch?v=' + id} target="_blank" rel="noreferrer">
