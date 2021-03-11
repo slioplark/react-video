@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/react-video/static/js/main.dfaee887.chunk.js",
-    "main.js.map": "/react-video/static/js/main.dfaee887.chunk.js.map",
+    "main.js": "/react-video/static/js/main.bbbc545d.chunk.js",
+    "main.js.map": "/react-video/static/js/main.bbbc545d.chunk.js.map",
     "runtime-main.js": "/react-video/static/js/runtime-main.bc24cf63.js",
     "runtime-main.js.map": "/react-video/static/js/runtime-main.bc24cf63.js.map",
-    "static/js/2.6325d072.chunk.js": "/react-video/static/js/2.6325d072.chunk.js",
-    "static/js/2.6325d072.chunk.js.map": "/react-video/static/js/2.6325d072.chunk.js.map",
+    "static/js/2.eb42c008.chunk.js": "/react-video/static/js/2.eb42c008.chunk.js",
+    "static/js/2.eb42c008.chunk.js.map": "/react-video/static/js/2.eb42c008.chunk.js.map",
     "index.html": "/react-video/index.html",
-    "static/js/2.6325d072.chunk.js.LICENSE.txt": "/react-video/static/js/2.6325d072.chunk.js.LICENSE.txt"
+    "static/js/2.eb42c008.chunk.js.LICENSE.txt": "/react-video/static/js/2.eb42c008.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.bc24cf63.js",
-    "static/js/2.6325d072.chunk.js",
-    "static/js/main.dfaee887.chunk.js"
+    "static/js/2.eb42c008.chunk.js",
+    "static/js/main.bbbc545d.chunk.js"
   ]
 }
