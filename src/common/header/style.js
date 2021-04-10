@@ -21,10 +21,7 @@ export const MenuWrapper = styled.div`
   width: 100%;
   max-width: 1080px;
   margin: auto;
-`;
-
-export const Search = styled.input`
-  width: 566px;
-  height: 26px;
-}
+  input {
+    width: 566px;
+  }
 `;

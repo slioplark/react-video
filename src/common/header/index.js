@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actionCreators } from '../../pages/home/store';
-import { HeaderWrapper, MenuWrapper, Search } from './style';
+import { Input } from "@chakra-ui/react"
+import { HeaderWrapper, MenuWrapper } from './style';
 
 function Header() {
   const love = useSelector(state => state.home.love);
@@ -22,7 +23,7 @@ function Header() {
           <span className="iconfont">&#xe7a6;</span>
           <span>Youtube</span>
         </Link>
-        <Search placeholder="search" onKeyDown={(e) => search(e)}></Search>
+        <Input placeholder="search" onKeyDown={(e) => search(e)} />
         <Link to="/react-video/love">
           <span className="iconfont">&#xe64d;</span>
           {love}
