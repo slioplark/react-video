@@ -24,7 +24,7 @@ function Header() {
           <Icon as={MdHome} />
           <span>Youtube</span>
         </Link>
-        <Input placeholder="search" onKeyDown={(e) => search(e)} />
+        <Input variant="flushed" placeholder="search" onKeyDown={(e) => search(e)} />
         <section>
           <Link to="/react-video/love">
             <Icon as={MdPlaylistPlay} />

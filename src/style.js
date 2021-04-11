@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
     display: block;
   }
   body {
+    min-height: 100vh !important;
     line-height: 1;
   }
   a {

@@ -19,7 +19,7 @@ export const MenuWrapper = styled.div`
   max-width: 1080px;
   margin: auto;
   input {
-    width: 566px;
+    width: 540px;
   }
   span {
     margin-right: 4px;
