@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actionCreators } from '../../pages/home/store';
 import { Input, Icon } from "@chakra-ui/react"
-import { MdHome, MdPlaylistPlay, MdPeople } from 'react-icons/md';
+import { MdHome, MdBook, MdPeople } from 'react-icons/md';
 import { HeaderWrapper, MenuWrapper } from './style';
 
 function Header() {
@@ -13,7 +13,6 @@ function Header() {
     if (e.key === 'Enter') {
       const val = e.target.value;
       dispatch(actionCreators.getSearchList(val));
-      dispatch(actionCreators.updateSearchText(val));
     }
   }
 
@@ -27,7 +26,7 @@ function Header() {
         <Input variant="flushed" placeholder="search" onKeyDown={(e) => search(e)} />
         <section>
           <Link to="/react-video/love">
-            <Icon as={MdPlaylistPlay} />
+            <Icon as={MdBook} />
             <span>{love}</span>
           </Link>
           <Link to="/react-video/login">

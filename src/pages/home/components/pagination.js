@@ -12,9 +12,9 @@ function Pagination({ pageSize = 0, totalNumber = 0, search = '' }) {
 
   const dispatch = useDispatch();
 
-  const clickPage = (index) => {
+  const handlePage = (index) => {
     dispatch(actionCreators.updatePage(index));
-    if (index === list.length && nextPageToken) {
+    if (index === (list.length - 1) && nextPageToken) {
       dispatch(actionCreators.getSearchList(searchText, nextPageToken));
     }
   }
@@ -26,9 +26,6 @@ function Pagination({ pageSize = 0, totalNumber = 0, search = '' }) {
       list.push(i);
     }
     setList(list);
-    return () => {
-      dispatch(actionCreators.updatePage(0));
-    }
   }, [pageSize, totalNumber, dispatch]);
 
   return (
@@ -38,7 +35,7 @@ function Pagination({ pageSize = 0, totalNumber = 0, search = '' }) {
           return (
             <PageItem
               className={page === index ? 'active' : ''}
-              onClick={() => clickPage(index)} key={index}>
+              onClick={() => handlePage(index)} key={index}>
               {item}
             </PageItem>
           )

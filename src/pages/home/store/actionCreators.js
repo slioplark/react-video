@@ -16,11 +16,6 @@ const changeType = (type) => ({
   payload: type
 });
 
-const changePage = (page) => ({
-  type: actionTypes.UPDATE_PAGE,
-  payload: page
-});
-
 const changeNextPageToken = (token) => ({
   type: actionTypes.UPDATE_NEXT_PAGE_TOKEN,
   payload: token
@@ -33,9 +28,14 @@ export const getSearchList = (q, pageToken = '') => {
     axios.get(`${api}?part=${part}&type=${type}&maxResults=${maxResults}&key=${key}&q=${q}&pageToken=${pageToken}`)
       .then(res => {
         dispatch(changeType('search'));
-        dispatch(changePage(0));
-        dispatch(updateList(res.data));
         dispatch(changeNextPageToken(res.data.nextPageToken));
+        dispatch(updateSearchText(q));
+        if (pageToken) {
+          dispatch(updateList(res.data));
+        } else {
+          dispatch(updatePage(0));
+          dispatch(changeList(res.data));
+        }
       })
       .catch(err => alert('由於多次得調用 youtube api，所以目前暫時無法回傳資料，請耐心等待一段時間後，再重新進入頁面。'));
   }
@@ -48,17 +48,21 @@ export const getVideosList = (pageToken = '') => {
     axios.get(`${api}?part=${part}&chart=${chart}&maxResults=${maxResults}&key=${key}&pageToken=${pageToken}`)
       .then(res => {
         dispatch(changeType('videos'));
-        dispatch(changePage(0));
-        dispatch(changeList(res.data));
         dispatch(changeNextPageToken(res.data.nextPageToken));
+        if (pageToken) {
+          dispatch(updateList(res.data));
+        } else {
+          dispatch(updatePage(0));
+          dispatch(changeList(res.data));
+        }
       })
       .catch(err => alert('由於多次得調用 youtube api，所以目前暫時無法回傳資料，請耐心等待一段時間後，再重新進入頁面。'));
   }
 }
 
-export const updateList = (value) => ({
+export const updateList = (data) => ({
   type: actionTypes.UPDATE_LIST,
-  payload: value
+  payload: data.items
 })
 
 export const updateLove = (value) => ({
@@ -73,5 +77,5 @@ export const updatePage = (index) => ({
 
 export const updateSearchText = (text) => ({
   type: actionTypes.UPDATE_SEARCH_TEXT,
-  searchText: text
+  payload: text
 });

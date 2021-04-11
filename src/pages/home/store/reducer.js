@@ -6,7 +6,6 @@ const defaultState = {
   type: null,
   list: [],
   searchText: null,
-  searchInfo: {},
   nextPageToken: null
 };
 
