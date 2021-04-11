@@ -1,9 +1,18 @@
 import { useForm } from 'react-hook-form';
-import { FormControl, FormLabel, Input, Button } from "@chakra-ui/react";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { FormControl, FormLabel, FormErrorMessage, Input, Button } from "@chakra-ui/react";
 import { LoginWrapper } from './style';
+import * as yup from 'yup';
 
 function Login() {
-  const { handleSubmit, register } = useForm();
+  const schema = yup.object().shape({
+    account: yup.string().required(),
+    password: yup.string().required().min(8)
+  });
+
+  const { handleSubmit, register, formState: { errors } } = useForm({
+    resolver: yupResolver(schema)
+  });
 
   const onSubmit = (values) => {
     console.log(values);
@@ -12,14 +21,15 @@ function Login() {
   return (
     <LoginWrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <FormControl isRequired>
+        <FormControl isInvalid={errors.account}>
           <FormLabel>Account</FormLabel>
           <Input
             placeholder="Account"
             {...register('account')}
           />
+          <FormErrorMessage>{errors.account?.message}</FormErrorMessage>
         </FormControl>
-        <FormControl isRequired>
+        <FormControl isInvalid={errors.password}>
           <FormLabel>Password</FormLabel>
           <Input
             type="password"
@@ -27,6 +37,7 @@ function Login() {
             autoComplete="off"
             {...register('password')}
           />
+          <FormErrorMessage>{errors.password?.message}</FormErrorMessage>
         </FormControl>
         <Button
           mt={2}
