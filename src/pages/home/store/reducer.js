@@ -13,6 +13,8 @@ const defaultState = {
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case actionTypes.GET_LIST:
+      return Object.assign(state, { list: action.payload });
+    case actionTypes.UPDATE_LIST:
       return Object.assign(state, { list: [...state.list, ...action.payload] });
     case actionTypes.UPDATE_TYPE:
       return Object.assign(state, { type: action.payload });

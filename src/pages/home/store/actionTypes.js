@@ -1,5 +1,7 @@
 export const GET_LIST = 'HOME/GET_LIST';
 
+export const UPDATE_LIST = 'HOE/UPDATE_LIST';
+
 export const UPDATE_TYPE = 'HOME/UPDATE_TYPE';
 
 export const UPDATE_LOVE = 'HOME/UPDATE_LOVE';

@@ -34,7 +34,7 @@ export const getSearchList = (q, pageToken = '') => {
       .then(res => {
         dispatch(changeType('search'));
         dispatch(changePage(0));
-        dispatch(changeList(res.data));
+        dispatch(updateList(res.data));
         dispatch(changeNextPageToken(res.data.nextPageToken));
       })
       .catch(err => alert('由於多次得調用 youtube api，所以目前暫時無法回傳資料，請耐心等待一段時間後，再重新進入頁面。'));
@@ -55,6 +55,11 @@ export const getVideosList = (pageToken = '') => {
       .catch(err => alert('由於多次得調用 youtube api，所以目前暫時無法回傳資料，請耐心等待一段時間後，再重新進入頁面。'));
   }
 }
+
+export const updateList = (value) => ({
+  type: actionTypes.UPDATE_LIST,
+  payload: value
+})
 
 export const updateLove = (value) => ({
   type: actionTypes.UPDATE_LOVE,
