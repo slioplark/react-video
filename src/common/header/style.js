@@ -9,9 +9,6 @@ export const HeaderWrapper = styled.div`
   padding: 0 16px;
   box-sizing: border-box;
   border-bottom: 1px solid #000;
-  .iconfont {
-    font-size: 24px;
-  }
 `;
 
 export const MenuWrapper = styled.div`
@@ -23,5 +20,12 @@ export const MenuWrapper = styled.div`
   margin: auto;
   input {
     width: 566px;
+  }
+  span {
+    margin-right: 4px;
+    vertical-align: bottom;
+  }
+  svg {
+    font-size: 24px;
   }
 `;

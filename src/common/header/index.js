@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actionCreators } from '../../pages/home/store';
-import { Input } from "@chakra-ui/react"
+import { Input, Icon } from "@chakra-ui/react"
+import { MdHome, MdPlaylistPlay, MdPeople } from 'react-icons/md';
 import { HeaderWrapper, MenuWrapper } from './style';
 
 function Header() {
@@ -20,14 +21,19 @@ function Header() {
     <HeaderWrapper>
       <MenuWrapper>
         <Link to="/react-video">
-          <span className="iconfont">&#xe7a6;</span>
+          <Icon as={MdHome} />
           <span>Youtube</span>
         </Link>
         <Input placeholder="search" onKeyDown={(e) => search(e)} />
-        <Link to="/react-video/love">
-          <span className="iconfont">&#xe64d;</span>
-          {love}
-        </Link>
+        <section>
+          <Link to="/react-video/love">
+            <Icon as={MdPlaylistPlay} />
+            <span>{love}</span>
+          </Link>
+          <Link to="/react-video/login">
+            <Icon as={MdPeople} />
+          </Link>
+        </section>
       </MenuWrapper>
     </HeaderWrapper>
   );
