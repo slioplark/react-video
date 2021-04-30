@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as actionTypes from './actionTypes';
 
-const key = 'AIzaSyAHfMbZqL9NiqUmQTNT_3V2lhDdkGC7AsI';
+const key = 'AIzaSyAot6Axw_WWo69WCvnrnCSJo-DYbHZD2Ds';
 const type = 'video';
 const chart = 'mostPopular';
 const maxResults = 50;
