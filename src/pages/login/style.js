@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const LoginWrapper = styled.div`
   position: absolute;
@@ -6,12 +6,21 @@ export const LoginWrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 540px;
+  max-width: 360px;
   margin: 16px auto;
   padding: 16px;
-  border: 1px solid #E2E8F0;
-  border-radius: 16px;
-  .chakra-form-control {
-    margin: 8px 0;
+  a {
+    display: block;
+    text-align: center;
   }
-`;
+  hr {
+    margin: 32px auto;
+  }
+  Button {
+    display: block;
+    margin: 32px auto;
+  }
+  .form-controller {
+    margin: 32px auto;
+  }
+`

@@ -46,13 +46,11 @@ function Login() {
   return (
     <LoginWrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <FormControl isInvalid={errors.account}>
-          <FormLabel>Account</FormLabel>
-          <Input placeholder="Account" {...register('account')} />
+        <FormControl className="form-controller" isInvalid={errors.account}>
+          <Input placeholder="Email" {...register('account')} />
           <FormErrorMessage>{errors.account?.message}</FormErrorMessage>
         </FormControl>
-        <FormControl isInvalid={errors.password}>
-          <FormLabel>Password</FormLabel>
+        <FormControl className="form-controller" isInvalid={errors.password}>
           <Input
             type="password"
             placeholder="Password"
@@ -61,10 +59,17 @@ function Login() {
           />
           <FormErrorMessage>{errors.password?.message}</FormErrorMessage>
         </FormControl>
-        <Button mt={2} type="submit" colorScheme="teal">
+        <Button w="100%" type="submit" colorScheme="teal">
           Submit
         </Button>
       </form>
+      <Link color="teal.500" href="#">
+        Forgot password?
+      </Link>
+      <Divider />
+      <Button colorScheme="teal" variant="outline">
+        Free Sign Up
+      </Button>
     </LoginWrapper>
   )
 }
