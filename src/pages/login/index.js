@@ -1,10 +1,10 @@
+import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import {
   useToast,
   FormControl,
   FormErrorMessage,
-  Link,
   Input,
   Button,
   Divider,
@@ -67,13 +67,13 @@ function Login() {
           Log In
         </Button>
       </form>
-      <Link color="teal.500" href="#">
-        Forgot password?
-      </Link>
+      <Link to="#">Forgot password?</Link>
       <Divider />
-      <Button colorScheme="teal" variant="outline">
-        Free Sign Up
-      </Button>
+      <Link to="/react-video/signUp">
+        <Button colorScheme="teal" variant="outline">
+          Free Sign Up
+        </Button>
+      </Link>
     </LoginWrapper>
   )
 }
