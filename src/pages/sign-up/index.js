@@ -30,7 +30,7 @@ function SignUp() {
   const onSubmit = async (values) => {
     try {
       const { email, password } = values
-      await auth.createUserWithEmailAndPassword(email, password)
+      await auth.createUser(email, password)
       toast({
         title: 'Account created.',
         status: 'success',

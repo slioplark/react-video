@@ -31,7 +31,7 @@ function Login() {
   const onSubmit = async (values) => {
     try {
       const { email, password } = values
-      const user = await auth.signInWithEmailAndPassword(email, password)
+      const user = await auth.signIn(email, password)
       if (!user.emailVerified) throw new Error('Please verify your email')
       toast({
         title: 'Log in created.',

@@ -2,23 +2,24 @@ import db from './index'
 
 const auth = db.auth()
 
-const createUserWithEmailAndPassword = async (email, password) => {
+const createUser = async (email, password) => {
   try {
-    const res = await auth.createUserWithEmailAndPassword(email, password)
-    const user = res.user
-    await user.sendEmailVerification({
-      url: `http://localhost:3000/react-video/login?email=${auth.currentUser.email}`,
-    })
+    const cred = await auth.createUserWithEmailAndPassword(email, password)
+    const user = cred.user
+    await user.sendEmailVerification()
+
     return user
   } catch (err) {
     throw new Error(err)
   }
 }
 
-const signInWithEmailAndPassword = async (email, password) => {
+const signIn = async (email, password) => {
   try {
-    const res = await auth.signInWithEmailAndPassword(email, password)
-    return res.user
+    const cred = await auth.signInWithEmailAndPassword(email, password)
+    const user = cred.user
+
+    return user
   } catch (err) {
     throw new Error(err)
   }
@@ -32,4 +33,25 @@ const signOut = async () => {
   }
 }
 
-export { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut }
+const verifyEmail = async (actionCode) => {
+  try {
+    await auth.applyActionCode(actionCode)
+
+    return 'verifyEmailSuccess'
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
+const resetPassword = async (actionCode, newPassword) => {
+  try {
+    await auth.verifyPasswordResetCode(actionCode)
+    await auth.confirmPasswordReset(actionCode, newPassword)
+
+    return 'resetPasswordSuccess'
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
+export { signIn, signOut, createUser, verifyEmail, resetPassword }
