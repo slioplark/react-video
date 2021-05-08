@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const HeaderWrapper = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ export const HeaderWrapper = styled.div`
   padding: 0 16px;
   box-sizing: border-box;
   border-bottom: 1px solid #000;
-`;
+`
 
 export const MenuWrapper = styled.div`
   display: flex;
@@ -19,7 +19,7 @@ export const MenuWrapper = styled.div`
   max-width: 1080px;
   margin: auto;
   input {
-    width: 540px;
+    max-width: 540px;
   }
   span {
     margin-right: 4px;
@@ -28,4 +28,8 @@ export const MenuWrapper = styled.div`
   svg {
     font-size: 24px;
   }
-`;
+`
+
+export const LinkWrapper = styled.div`
+  flex: 0 0 auto;
+`
