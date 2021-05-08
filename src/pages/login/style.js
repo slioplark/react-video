@@ -9,17 +9,12 @@ export const LoginWrapper = styled.div`
   max-width: 360px;
   margin: 16px auto;
   padding: 16px;
-  hr {
-    margin: 32px auto;
-  }
   Button {
     display: block;
     margin: 32px auto;
   }
-  .text {
-    display: block;
-    text-align: center;
-    cursor: pointer;
+  hr {
+    margin: 32px auto;
   }
   .form-controller {
     margin: 32px auto;
