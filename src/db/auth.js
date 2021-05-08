@@ -50,4 +50,19 @@ const resetPassword = async (actionCode, newPassword) => {
   }
 }
 
-export { signIn, signOut, createUser, verifyEmail, resetPassword }
+const sendPasswordResetEmail = async (email) => {
+  try {
+    await auth.sendPasswordResetEmail(email)
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
+export {
+  signIn,
+  signOut,
+  createUser,
+  verifyEmail,
+  resetPassword,
+  sendPasswordResetEmail,
+}
