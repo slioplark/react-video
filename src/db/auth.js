@@ -36,8 +36,6 @@ const signOut = async () => {
 const verifyEmail = async (actionCode) => {
   try {
     await auth.applyActionCode(actionCode)
-
-    return 'verifyEmailSuccess'
   } catch (err) {
     throw new Error(err)
   }
@@ -47,8 +45,6 @@ const resetPassword = async (actionCode, newPassword) => {
   try {
     await auth.verifyPasswordResetCode(actionCode)
     await auth.confirmPasswordReset(actionCode, newPassword)
-
-    return 'resetPasswordSuccess'
   } catch (err) {
     throw new Error(err)
   }

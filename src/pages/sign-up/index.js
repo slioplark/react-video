@@ -48,12 +48,20 @@ function SignUp() {
   return (
     <SignUpWrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <FormControl className="form-controller" isInvalid={errors.email}>
+        <FormControl
+          isRequired
+          className="form-controller"
+          isInvalid={errors.email}
+        >
           <FormLabel>Email</FormLabel>
           <Input placeholder="Email" {...register('email')} />
           <FormErrorMessage>{errors.email?.message}</FormErrorMessage>
         </FormControl>
-        <FormControl className="form-controller" isInvalid={errors.password}>
+        <FormControl
+          isRequired
+          className="form-controller"
+          isInvalid={errors.password}
+        >
           <FormLabel>Password</FormLabel>
           <Input
             type="password"
