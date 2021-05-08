@@ -8,6 +8,7 @@ import Home from './pages/home'
 import Love from './pages/love'
 import Play from './pages/play'
 import Login from './pages/login'
+import Verify from './pages/verify'
 import SignUp from './pages/sign-up'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/react-video/love" exact component={Love} />
         <Route path="/react-video/play/:id" exact component={Play} />
         <Route path="/react-video/login" exact component={Login} />
+        <Route path="/react-video/verify" exact component={Verify} />
         <Route path="/react-video/signUp" exact component={SignUp} />
       </BrowserRouter>
     </Provider>
