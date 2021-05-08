@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form'
+import { useHistory } from 'react-router'
 import { yupResolver } from '@hookform/resolvers/yup'
 import {
   useToast,
@@ -14,6 +15,7 @@ import * as auth from '../../db/auth'
 
 function SignUp() {
   const toast = useToast()
+  const history = useHistory()
   const schema = yup.object().shape({
     email: yup.string().required(),
     password: yup.string().required().min(8),
@@ -31,11 +33,7 @@ function SignUp() {
     try {
       const { email, password } = values
       await auth.createUser(email, password)
-      toast({
-        title: 'Account created.',
-        status: 'success',
-        isClosable: true,
-      })
+      history.push('/react-video')
     } catch (err) {
       toast({
         title: err.message,

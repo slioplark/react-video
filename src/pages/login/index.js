@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import {
@@ -24,6 +24,7 @@ import * as auth from '../../db/auth'
 
 function Login() {
   const toast = useToast()
+  const history = useHistory()
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const schema = yup.object().shape({
@@ -45,11 +46,7 @@ function Login() {
       const { email, password } = getValues()
       const user = await auth.signIn(email, password)
       if (!user.emailVerified) throw new Error('Please verify your email')
-      toast({
-        title: 'Log in created.',
-        status: 'success',
-        isClosable: true,
-      })
+      history.push('/react-video')
     } catch (err) {
       toast({
         title: err.message,
