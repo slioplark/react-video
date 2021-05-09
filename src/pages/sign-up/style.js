@@ -11,7 +11,7 @@ export const SignUpWrapper = styled.div`
   padding: 24px;
   border: solid 3px #1b3260;
   border-radius: 44px;
-  Button {
+  button {
     display: block;
     margin: 24px auto;
   }

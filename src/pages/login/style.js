@@ -21,6 +21,13 @@ export const LogInWrapper = styled.div`
   }
 `
 
+export const SignOutWrapper = styled.div`
+  margin: 24px auto;
+  padding: 24px;
+  border: solid 3px #1b3260;
+  border-radius: 44px;
+`
+
 export const ForgotPwdWrapper = styled.div`
   .text {
     display: block;
