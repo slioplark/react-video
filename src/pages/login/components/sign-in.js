@@ -12,7 +12,6 @@ import {
   Button,
   Divider,
 } from '@chakra-ui/react'
-import { SignInWrapper } from '../style'
 
 import * as yup from 'yup'
 import * as auth from '../../../db/auth'
