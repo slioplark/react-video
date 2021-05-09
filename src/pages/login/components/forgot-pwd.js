@@ -16,9 +16,9 @@ import {
   ModalBody,
   ModalCloseButton,
 } from '@chakra-ui/react'
-import { ForgotPwdWrapper } from './style'
+import { ForgotPwdWrapper } from '../style'
 import * as yup from 'yup'
-import * as auth from '../../db/auth'
+import * as auth from '../../../db/auth'
 
 function ForgotPwd() {
   const toast = useToast()

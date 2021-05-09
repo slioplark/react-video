@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const LoginWrapper = styled.div`
+export const LogInWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -9,14 +9,22 @@ export const LoginWrapper = styled.div`
   max-width: 360px;
   margin: 16px auto;
   padding: 16px;
-  Button {
-    display: block;
+  hr {
     margin: 32px auto;
   }
-  hr {
+  button {
+    display: block;
     margin: 32px auto;
   }
   .form-controller {
     margin: 32px auto;
+  }
+`
+
+export const ForgotPwdWrapper = styled.div`
+  .text {
+    display: block;
+    text-align: center;
+    cursor: pointer;
   }
 `
